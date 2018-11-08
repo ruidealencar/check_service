@@ -1,0 +1,20 @@
+<div class="page-header">
+  <%= link_to services_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_service_path(@service), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show service</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Projects:</dt>
+  <dd><%= @service.projects %></dd>
+
+  <dt>Status:</dt>
+  <dd><%= @service.status %></dd>
+
+</dl>

@@ -1,0 +1,54 @@
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/v4-shims.css">
+</head>
+<div class="page-header">
+  <%= link_to new_project_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Project
+  <% end %>
+  <h1>Listing projects</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Project name</th>
+            <th>Address</th>
+            <th>Rvm</th>
+            <th></th>
+            <th></th>
+            <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @projects) do |project| %>
+            <td><i class="fa fa-dot-circle-o" aria-hidden="true">
+              <%= project.project_name %>
+            </i></td>
+
+            <td><i class="fa fa-envelope-o" aria-hidden="true">
+              <%= project.address %>
+            </i></td>
+
+            <td><i class="fa fa-diamond" aria-hidden="true">
+              <%= "#{project.rvm_list}@#{project.gemset}" %>
+            </i></td>
+
+            <td><i class="fa fa-eye" aria-hidden="true">
+              <%= link_to 'Show', project %>
+            </i></td>
+
+            <td><i class="fa fa-pencil-square-o" aria-hidden="true">
+              <%= link_to 'Edit', edit_project_path(project) %>
+            </i></td>
+
+            <td><i class="fa fa-trash-o" aria-hidden="true">
+              <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </i></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_name: MyString
+  address: MyString
+  rvm_list: MyString
+  gemset: MyString
+
+two:
+  project_name: MyString
+  address: MyString
+  rvm_list: MyString
+  gemset: MyString
