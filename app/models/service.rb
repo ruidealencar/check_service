@@ -1,7 +1,7 @@
 class Service < ApplicationRecord
 
   def self.curl(project)
-    ping = `curl #{project.address}`
-    ping.include?(project.project_name)
+    resp = `curl -Is #{project.address} -L | grep HTTP/`
+    resp.include?("204") || resp.include?("200") || resp.include("201")
   end
 end

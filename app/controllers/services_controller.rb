@@ -5,7 +5,7 @@ class ServicesController < ApplicationController
   def index
 
     @status = Hash.new
-    
+
     Project.all.each do |p|
       @status[p.project_name.to_sym] = Service.curl(p)
     end

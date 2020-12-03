@@ -19,12 +19,12 @@
     <tbody>
       <% @status.each do |key, value| %>
         <tr>
-            <td><i class="fa fa-dot-circle-o" aria-hidden="true"><%= key %></i></td>
-            <%if value == true %>
-              <td class="on"><i class="fa fa-plug" aria-hidden="true"><%= 'On' %></i></td>
-            <%else%>
-              <td class="off"><i class="fa fa-power-off" aria-hidden="true"><%= 'Off' %></i></td>
-            <%end%>
+          <td><i class="fa fa-dot-circle-o" aria-hidden="true"><%= key %></i></td>
+          <%if value == true %>
+            <td class="on"><i class="fa fa-plug" aria-hidden="true"><%= 'On' %></i></td>
+          <%else%>
+            <td class="off"><i class="fa fa-power-off" aria-hidden="true"><%= 'Off' %></i></td>
+          <%end%>
         </tr>
       <% end %>
     </tbody>
